@@ -6,19 +6,15 @@
 /*   By: vakande <vakande@student.42barcelona.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 15:12:38 by vakande           #+#    #+#             */
-/*   Updated: 2025/01/17 15:17:49 by vakande          ###   ########.fr       */
+/*   Updated: 2025/01/24 16:57:31 by vakande          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(char *str)
+int	ft_isdigit(int c)
 {
-	while (*str)
+	if (!(c >= '0' && c <= '9'))
 	{
-		if (!(*str >= '0' && *str <= '9'))
-		{
-			return (0);
-		}
-		str++;
+		return (0);
 	}
 	return (1);
 }

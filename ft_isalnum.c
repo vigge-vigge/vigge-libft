@@ -6,20 +6,16 @@
 /*   By: vakande <vakande@student.42barcelona.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 15:21:39 by vakande           #+#    #+#             */
-/*   Updated: 2025/01/17 15:58:20 by vakande          ###   ########.fr       */
+/*   Updated: 2025/01/24 17:38:26 by vakande          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(char *str)
+int	ft_isalnum(int c)
 {
-	while (*str)
+	if (!((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')
+			|| (c >= '0' && c <= '9')))
 	{
-		if (!((*str >= 'A' && *str <= 'Z') || (*str >= 'a' && *str <= 'z'
-					|| (*str >= '0' && *str <= '9'))))
-		{
-			return (0);
-		}
-		str++;
+		return (0);
 	}
 	return (1);
 }

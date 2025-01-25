@@ -1,34 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vakande <vakande@student.42barcelona.      +#+  +:+       +#+        */
+/*   By: vakande <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/18 12:21:58 by vakande           #+#    #+#             */
-/*   Updated: 2025/01/25 10:47:51 by vakande          ###   ########.fr       */
+/*   Created: 2025/01/25 11:13:35 by vakande           #+#    #+#             */
+/*   Updated: 2025/01/25 11:42:11 by vakande          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
+	size_t	j;
+	char	*str;
 
+	str = (char *)malloc(sizeof(*s) * (len + 1));
+	if (!str)
+		return (NULL);
 	i = 0;
-	if (size > 0)
+	j = 0;
+	while (s[i])
 	{
-		while (src[i] && i < (size - 1))
+		if (i >= start && j < len)
 		{
-			dest[i] = src[i];
-			i++;
+			str[j] = s[i];
+			j++;
 		}
-		dest[i] = 0;
-	}
-	while (src[i])
-	{
 		i++;
 	}
-	return (i);
+	str[j] = 0;
+	return (str);
 }

@@ -6,19 +6,15 @@
 /*   By: vakande <vakande@student.42barcelona.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 15:47:26 by vakande           #+#    #+#             */
-/*   Updated: 2025/01/17 15:55:54 by vakande          ###   ########.fr       */
+/*   Updated: 2025/01/24 17:39:56 by vakande          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(char *str)
+int	ft_isascii(int c)
 {
-	while (*str)
+	if (!(c >= 0 && c <= 127))
 	{
-		if (!(*str >= 0 && *str <= 127))
-		{
-			return (0);
-		}
-		str++;
+		return (0);
 	}
 	return (1);
 }

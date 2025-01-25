@@ -6,19 +6,26 @@
 /*   By: vakande <vakande@student.42barcelona.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 14:32:45 by vakande           #+#    #+#             */
-/*   Updated: 2025/01/17 14:58:44 by vakande          ###   ########.fr       */
+/*   Updated: 2025/01/24 16:54:59 by vakande          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	is_alpha(char *str)
+#include <stdio.h>
+#include "libft.h"
+
+int	ft_isalpha(int c)
 {
-	while (*str)
+	if (!((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')))
 	{
-		if (!((*str >= 'A' && *str <= 'Z') || (*str >= 'a' && *str <= 'z')))
-		{
-			return (0);
-		}
-		str++;
+		return (0);
 	}
 	return (1);
 }
+/*
+int	main(){
+
+	printf("%d\n", ft_isalpha('2'));
+
+	return (0);
+}
+*/

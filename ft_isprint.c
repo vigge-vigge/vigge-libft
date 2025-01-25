@@ -6,21 +6,14 @@
 /*   By: vakande <vakande@student.42barcelona.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 16:13:19 by vakande           #+#    #+#             */
-/*   Updated: 2025/01/17 16:28:10 by vakande          ###   ########.fr       */
+/*   Updated: 2025/01/24 18:00:14 by vakande          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(char *str)
+int	ft_isprint(int c)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		if (!(str[i] >= 32 && str[i] <= 127))
-			return (0);
-		i++;
-	}
+	if (!(c >= 32 && c <= 127))
+		return (0);
 	return (1);
 }
 /*
