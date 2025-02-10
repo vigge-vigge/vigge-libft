@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vakande <vakande@student.42barcelona.      +#+  +:+       +#+        */
+/*   By: vakande <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/17 17:32:50 by vakande           #+#    #+#             */
-/*   Updated: 2025/02/10 13:16:43 by vakande          ###   ########.fr       */
+/*   Created: 2025/01/25 14:59:14 by vakande           #+#    #+#             */
+/*   Updated: 2025/02/10 14:26:34 by vakande          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
-{
-	unsigned int	size;
+char	*ft_strtrim(char const *s1, char const *set)
 
-	size = 0;
-	while (s[size])
-		size++;
-	return (size);
+{
+	size_t	i;
+
+	if (!s1 || !set)
+		return (0);
+	i = 0;
+	while (*s1 && ft_strchr(set, *s1))
+		s1++;
+	i = ft_strlen(s1);
+	while (i && ft_strchr(set, s1[i]))
+		i--;
+	return (ft_substr(s1, 0, i + 1));
 }

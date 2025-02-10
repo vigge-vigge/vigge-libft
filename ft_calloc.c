@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vakande <vakande@student.42barcelona.      +#+  +:+       +#+        */
+/*   By: vakande <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/17 17:32:50 by vakande           #+#    #+#             */
-/*   Updated: 2025/02/10 13:16:43 by vakande          ###   ########.fr       */
+/*   Created: 2025/02/10 14:28:30 by vakande           #+#    #+#             */
+/*   Updated: 2025/02/10 14:28:41 by vakande          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+void	*ft_calloc(size_t count, size_t size)
 {
-	unsigned int	size;
+	void	*tmp;
+	size_t	s;
 
-	size = 0;
-	while (s[size])
-		size++;
-	return (size);
+	s = count * size;
+	tmp = malloc(s);
+	if (count == 0 || size == 0)
+	{
+		size = 1;
+		count = 1;
+	}
+	if (tmp == NULL)
+		return (NULL);
+	else
+		ft_bzero (tmp, s);
+	return (tmp);
 }

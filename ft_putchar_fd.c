@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vakande <vakande@student.42barcelona.      +#+  +:+       +#+        */
+/*   By: vakande <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/17 17:32:50 by vakande           #+#    #+#             */
-/*   Updated: 2025/02/10 13:16:43 by vakande          ###   ########.fr       */
+/*   Created: 2025/01/26 16:41:17 by vakande           #+#    #+#             */
+/*   Updated: 2025/01/26 16:55:10 by vakande          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+void	ft_putchar_fd(char c, int fd)
 {
-	unsigned int	size;
-
-	size = 0;
-	while (s[size])
-		size++;
-	return (size);
+	write(fd, &c, 1);
 }

@@ -6,15 +6,15 @@
 /*   By: vakande <vakande@student.42barcelona.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 16:13:19 by vakande           #+#    #+#             */
-/*   Updated: 2025/01/24 18:00:14 by vakande          ###   ########.fr       */
+/*   Updated: 2025/02/10 13:15:22 by vakande          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isprint(int c)
 {
-	if (!(c >= 32 && c <= 127))
-		return (0);
-	return (1);
+	if (c >= 32 && c < 127)
+		return (1);
+	return (0);
 }
 /*
 #include <stdio.h>
@@ -31,5 +31,4 @@ int main() {
 	// Should print 0 (contains non-ASCII char)
 
     return 0;
-}
-*/
+}*/

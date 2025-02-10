@@ -6,24 +6,25 @@
 /*   By: vakande <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 15:31:23 by vakande           #+#    #+#             */
-/*   Updated: 2025/01/22 13:59:23 by vakande          ###   ########.fr       */
+/*   Updated: 2025/02/10 14:00:37 by vakande          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libfr.h"
+#include "libft.h"
 
 char	*ft_strrchr(char *s, int c)
 {
-	int	i;
+	const char	*ptr;
 
-	i = ft_strlen(s);
-	while (i >= 0)
+	ptr = NULL;
+	while (*s)
 	{
-		if (s[i] == c)
-		{
-			return ((char *)s + 1);
-		}
-		i--;
+		if (*s == (char) c)
+			ptr = s;
+		s++;
 	}
-	return (NULL);
+	if (*s == ((char)c))
+		return ((char *)s);
+	else
+		return ((char *)ptr);
 }
